@@ -17,7 +17,7 @@ var questionSchema = new mongoose.Schema({
     id: String,
     title: String,
     choices: [{ title: String, feedback: String }]
-})
+}, { collection: 'questions' });
 
 var Question = mongoose.model('question', questionSchema);
 
@@ -27,7 +27,7 @@ app.get('/', function(request, response){
     response.send(res);
 });
 
-mongoose.connect(db_uri, {dbName: 'emtutor'});
+mongoose.connect(db_uri, {dbName: 'emtutor', useNewUrlParser: true});
 db = mongoose.connection;
 db.on('error', function (err) {
     if (err) // couldn't connect
@@ -43,12 +43,12 @@ db.on('error', function (err) {
 db.once('open', function() {
     res = "we're connected!";
 
-    /*
+    
     question.save(function (err, question) {
         if (err) res = "FAIL!";
     });
-    */
-
+    
+/*
     Question.find(function (err, questions) {
         if (err) res = err;
         else res = questions[0].title;
@@ -56,7 +56,7 @@ db.once('open', function() {
         //else res = questions.toObject();
         app.listen(port);
     })
-
+*/
 });
 
 /*
