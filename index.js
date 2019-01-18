@@ -43,12 +43,12 @@ db.on('error', function (err) {
 db.once('open', function() {
     res = "we're connected!";
 
-    
+/*    
     question.save(function (err, question) {
         if (err) res = "FAIL!";
     });
-    
-/*
+*/    
+
     Question.find(function (err, questions) {
         if (err) res = err;
         else res = questions[0].title;
@@ -56,7 +56,7 @@ db.once('open', function() {
         //else res = questions.toObject();
         app.listen(port);
     })
-*/
+
 });
 
 /*
