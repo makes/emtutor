@@ -51,7 +51,7 @@ db.once('open', function() {
 
     Question.find(function (err, questions) {
         if (err) res = err;
-        else res = questions[0].id;
+        else res = questions[0].title;
         //else res = JSON.stringify(questions);
         //else res = questions.toObject();
         app.listen(port);
