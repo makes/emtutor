@@ -13,6 +13,8 @@ var port = process.env.PORT || 1337;
 
 var res = "No connection"
 
+app.use(express.static(__dirname + '/public'));     // static files location
+
 var questionSchema = new mongoose.Schema({
     id: String,
     title: String,
@@ -38,6 +40,23 @@ db.on('error', function (err) {
   
     // retry if desired
     //connect();
+});
+
+app.get('/api/questions', function(req, res) {
+    // get all questions in the database using mongoose
+    Question.find(function(err, questions) {
+
+        // if there is an error, send the error. nothing after res.send(err) will execute
+        if (err) {
+            res.send(err)
+        }
+
+        res.json(questions); // return all todos in JSON format
+    });
+});
+
+app.get('*', function(req, res) {
+    res.sendFile('public/index.html', { root : __dirname });
 });
 
 db.once('open', function() {
