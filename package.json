@@ -2,12 +2,9 @@
     "name": "emtutor",
     "description": "eLearning App for Nursing and Medicine",
     "version": "0.0.1",
+    "main": "server.js",
     "private": true,
-    "license": "MIT",
     "author": "Simo Mäkelä",
-    "scripts": {
-        "start": "node index.js"
-    },
     "dependencies": {
         "express": "^4.16.4",
         "mongodb": "^3.1.12",
