@@ -1,29 +1,22 @@
 var express = require('express');
 var mongodb = require('mongodb');
-var app = express();
+var app = require('express')();
+
+const questions = require('./routes/questions.js');
+//  Connect all our routes to our application
+app.use('/api/questions', questions);
 
 const MongoClient = mongodb.MongoClient;
 const db_uri = "mongodb+srv://emtutor:agch782@cluster0-mmx6z.azure.mongodb.net/test?retryWrites=true";
 var db;
 
 var mongoose = require('mongoose');
-//var Schema = mongoose.Schema;
 
 var port = process.env.PORT || 1337;
 
 var res = "No connection"
 
 app.use(express.static(__dirname + '/public'));     // static files location
-
-var questionSchema = new mongoose.Schema({
-    id: String,
-    title: String,
-    choices: [{ title: String, feedback: String }]
-}, { collection: 'questions' });
-
-var Question = mongoose.model('question', questionSchema);
-
-var question = new Question({ id: 'pwave', title: 'Millainen P-aalto?', choices: [ {title: 'Positiivinen', feedback: 'Jees!'}, {title: 'Bifaasinen', feedback: 'V&auml;&auml;rin meni.'}, {title: 'Negatiivinen', feedback: 'V&auml;&auml;rin meni.'}, {title: 'Ei P-aaltoja', feedback: 'V&auml;&auml;rin meni.'}] });
 
 app.get('/', function(request, response){
     response.send(res);
@@ -42,19 +35,6 @@ db.on('error', function (err) {
     //connect();
 });
 
-app.get('/api/questions', function(req, res) {
-    // get all questions in the database using mongoose
-    Question.find(function(err, questions) {
-
-        // if there is an error, send the error. nothing after res.send(err) will execute
-        if (err) {
-            res.send(err)
-        }
-
-        res.json(questions); // return all todos in JSON format
-    });
-});
-
 app.get('*', function(req, res) {
     res.sendFile('public/index.html', { root : __dirname });
 });
@@ -62,42 +42,7 @@ app.get('*', function(req, res) {
 db.once('open', function() {
     res = "we're connected!";
 
-/*    
-    question.save(function (err, question) {
-        if (err) res = "FAIL!";
-    });
-*/    
-
-    Question.find(function (err, questions) {
-        if (err) res = err;
-        else res = questions[0].title;
-        //else res = JSON.stringify(questions);
-        //else res = questions.toObject();
-        app.listen(port);
-    })
-
-});
-
-/*
-MongoClient.connect(db_uri, { useNewUrlParser: true }, function(err, database) {
-    if(!err) {
-        res = "We are connected";
-    } else {
-        res = "noc";
-    }
-    db = database.db("emtutor");
-
-    coll = db.collection("coll")
-    coll.find({}).toArray(function (err, result) {
-        if (err) {
-            res = err;
-        } else {
-            res = JSON.stringify(result);
-        }
-    })
     app.listen(port);
-    //db_client.close();
 });
-*/
 
 console.log("Server running on port %d", port);
