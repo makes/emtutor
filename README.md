@@ -1,1 +1,9 @@
 # emtutor
+
+This is a planned e-learning platform for healthcare professionals. The idea was sparked from [a paramedic students' final project][1], which recognizes possible demand for an ECG interpretation learning tool.
+
+Then again, why limit to only ECGs? The platform could also be used for dynamic patient cases, in which user choices affect the outcome. Also, the usefulness of game-like features could be explored.
+
+The platform should be suitable for learning activities from simple quizzes all the way to patient cases in emergency medicine, anaesthesia monitoring exercises, ECG rhythm recognition and 12-channel interpretation drills. The features mentioned here are just brainstormed ideas. Actual first stage focus will be defined later.
+
+[1]: http://www.theseus.fi/handle/10024/135056?value=len
