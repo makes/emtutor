@@ -1,0 +1,152 @@
+/* ******************************
+   YHTEISET TYYLIT 
+******************************* */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: blue;
+}
+
+.topnav a {
+  float: right;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: red;
+}
+
+.topnav a.active {
+  
+  color: white;
+}
+p {
+  color:cadetblue;
+  text-decoration: none;
+}
+
+a {
+	font-variant: small-caps;
+}
+
+a:hover,
+a:focus {
+  color:azure;
+  font-weight: 100;
+ 
+}
+
+strong {
+  font-weight: 100;
+  
+}
+
+.flex-container  {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px; 
+    font-weight: bold;
+    margin: 0 auto;
+   width:100%;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+
+  display: flex;  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+    
+}
+
+.nowrap  { 
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.wrap    { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}  
+
+.flex-item {
+  background:crimson;
+  border-radius: 25px;
+  padding: 5px;
+  width: 300px;
+  height: 350px;
+  margin-top: 15px;
+  
+  line-height: 150px;
+  color: white;
+  font-weight: 100;
+  font-size: 3em;
+  text-align: center;
+}
+
+.monitor {
+    width: 90%;
+  border: 4px solid #0f3a4d;
+  padding: 0;
+  max-width: 500px;
+  border-radius:25px;
+  background-image:url(ECGmoniB.jpg);
+  margin: 0 auto;
+}
+
+.svg {
+     width: 100%;
+	max-width: 470px;
+	margin-left: 20px;
+  margin-right: 20px;
+	position: relative;
+	transition: all 0.5s ease-in-out;
+}
+
+.ekg {
+    fill: none;
+	stroke: #00d704;
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-linejoin: miter;
+	opacity: 0;
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 1000;
+	animation: ekg 1.5s linear forwards infinite;
+}
+@keyframes ekg {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      stroke-dashoffset: 2000;
+    }
+    99% {
+      opacity: 0;
+      stroke-dashoffset: 3000;
+    }
+    100% {
+      stroke-dashoffset: 1000;
+    }
+}
+
+
+
+
+
+
+
