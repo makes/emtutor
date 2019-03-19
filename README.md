@@ -8,5 +8,8 @@ The platform should be suitable for learning activities from simple quizzes all 
 
 This project is in the spirit of [FOAMed - Free Open Access Medical Education][2]. Thus, the licensing model should be such that any educational content published on this platform should be accessible to everyone. Perhaps the revenue logic could be similar to open source software.
 
+Project group:
+topiasre - Topias Renko   1706862
+
 [1]: http://www.theseus.fi/handle/10024/135056?value=len
 [2]: https://litfl.com/foam-free-open-access-medical-education/
