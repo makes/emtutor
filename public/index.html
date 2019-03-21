@@ -140,7 +140,7 @@
         var html = document.getElementById('questions').innerHTML;
         html += '<h3>' + question.title + '</h3>';
         for (var i = 0; i < question.choices.length; i++) {
-          html += '<button type="button" class="btn btn-primary btn-lg btn-block" onclick="processQuestion(\'' +
+          html += '<button type="button" class="btn btn-danger btn-lg btn-block" onclick="processQuestion(\'' +
               question.choices[i].feedback + '\', \'' + question.id + '\')">' +
               question.choices[i].title + '</button>';
         }
@@ -206,6 +206,7 @@
       <div id="databases"></div>
     </div>
     <div class="row" id="questions">
+
     </div>
   </div>
 
