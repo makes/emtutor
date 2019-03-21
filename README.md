@@ -12,6 +12,7 @@ This project is in the spirit of [FOAMed - Free Open Access Medical Education][2
 
 makes - Simo Mäkelä   1901876  
 topiasre - Topias Renko   1706862
+hennakol - Henna Koljonen  1902413
 
 [1]: http://www.theseus.fi/handle/10024/135056?value=len
 [2]: https://litfl.com/foam-free-open-access-medical-education/
