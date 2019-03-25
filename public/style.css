@@ -1,6 +1,22 @@
 html, body {
-    margin: 0;
-    padding: 0;
-  }
-  btn.btn-primary.btn-lg.btn-block
-  
+    margin: 0 auto;
+    padding: 0 auto;
+    }
+   canvas {
+       position: center;
+      top:25%;
+      left: 20%;
+       width: 80%;
+    margin: 0 auto;
+    display: block;
+   
+ } 
+ 
+.back
+{ 
+    background-image: url("EKGmonitorFrame.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
