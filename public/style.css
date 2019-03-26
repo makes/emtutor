@@ -2,21 +2,39 @@ html, body {
     margin: 0 auto;
     padding: 0 auto;
     }
+    #ecg {
+      width: 1035px;
+      height: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      background-image: url("EKGmonitorFrame.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-origin: border-box;
+      
+      padding-left: 120px;
+      padding-top: 70px;
+      padding-right: 200px;
+      padding-bottom: 70px;
+    }
    canvas {
-       
-    margin: 0 30px 20px 0;
-    display:block; 
-    width: 1055px;
-	height: 450px;
-   position: relative;
-   z-index: -1;
-  top:107px;
-  margin-left: 315px;
-  margin-right: 310px;
-  float: left;
+          /*margin: 0 30px 20px 0;*/
+    
+    /*width: 100%;
+    height: 100%;*/
+    width: 900px;
+	height: 250px;
+   /*position: relative;
+   /*z-index: -1;
+  top:90px;
+  /*margin-left: 315px;
+  margin-right: 310px;*/
+  
+  margin-bottom: 100px;
    } 
  
- img {
+ /*img {
     position: absolute;
     left: 190px;
     top: 0px;
@@ -26,4 +44,4 @@ html, body {
     margin-right: auto;
     width: 1035px;
     
-  }
+  }*/
