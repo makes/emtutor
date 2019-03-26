@@ -6,10 +6,9 @@ html, body {
        
     margin: 0 auto;
     display:block; 
-    width: 66%;
-    height: 50%;
-  
-  position: relative;
+    width: 1050px;
+	height: 450px;
+   position: relative;
   left: 68px;
   top:107px;
   margin-left: auto;
