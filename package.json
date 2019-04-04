@@ -1,13 +1,28 @@
 {
-    "name": "emtutor",
-    "description": "eLearning App for Nursing and Medicine",
-    "version": "0.0.1",
-    "main": "server.js",
-    "private": true,
-    "author": "Simo MÃ¤kelÃ¤",
-    "dependencies": {
-        "express": "^4.16.4",
-        "mongodb": "^3.1.13",
-        "mongoose": "^5.4.17"
-    }
+  "name": "emtutor",
+  "description": "eLearning App for Nursing and Medicine",
+  "version": "0.0.1",
+  "main": "index.js",
+  "private": true,
+  "author": "Simo Mäkelä",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "browserify-middleware": "8.1.1",
+    "cached-path-relative": "1.0.2",
+    "compression": "1.7.4",
+    "domready": "1.0.8",
+    "express": "5.0.0-alpha.7",
+    "mithril": "1.1.6",
+    "mithril-node-render": "2.3.2",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.20",
+    "smoothie": "^1.35.0"
+  },
+  "devDependencies": {
+    "brfs": "^2.0.2",
+    "browserify": "^16.2.3"
+  }
 }
