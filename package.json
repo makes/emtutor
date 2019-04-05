@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "private": true,
-  "author": "Simo Mäkelä",
+  "author": "Simo MÃ¤kelÃ¤",
   "engines": {
     "node": ">=4.0.0"
   },
@@ -17,12 +17,14 @@
     "express": "5.0.0-alpha.7",
     "mithril": "1.1.6",
     "mithril-node-render": "2.3.2",
-    "mongodb": "^3.2.2",
     "mongoose": "^5.4.20",
     "smoothie": "^1.35.0"
   },
   "devDependencies": {
     "brfs": "^2.0.2",
-    "browserify": "^16.2.3"
+    "browserify": "^16.2.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }

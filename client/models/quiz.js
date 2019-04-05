@@ -1,19 +1,14 @@
-'use strict'
+const m = require('mithril');
 
-var m = require("mithril")
-
-var quiz = {
+const quiz = {
     list: [],
-    loadList: function () {
-        return m.request({
-            method: "GET",
-            url: "/api/quizzes",
-            withCredentials: true,
-        })
-            .then(function (result) {
-                quiz.list = result
-            })
-    },
-}
+    loadList: () => m.request({
+        method: 'GET',
+        url: '/api/quizzes',
+        withCredentials: true,
+    }).then((result) => {
+        quiz.list = result;
+    }),
+};
 
-module.exports = quiz
+module.exports = quiz;

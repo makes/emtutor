@@ -1,21 +1,18 @@
-'use strict'
+const m = require('mithril');
 
-var m = require("mithril")
-
-var question = {
+const question = {
     current: {},
-    load: function (vnode) {
+    load: (vnode) => {
         vnode.state.loading = true;
         return m.request({
-            method: "GET",
-            url: "/api/question/" + vnode.attrs.quiz + "/" + vnode.attrs.question,
+            method: 'GET',
+            url: `/api/question/${vnode.attrs.quiz}/${vnode.attrs.question}`,
             withCredentials: true,
-        })
-            .then(function (result) {
-                question.current = result
-                vnode.state.loading = false;
-            })
+        }).then((result) => {
+            question.current = result;
+            vnode.state.loading = false;
+        });
     },
-}
+};
 
-module.exports = question
+module.exports = question;
