@@ -1,24 +1,28 @@
 @media (min-width: 0) {
   .card-deck .card {
     flex: 0 0 calc(100% - 30px);
+     background-color: rgb(216, 61, 61);
   }
 }
 
 @media (min-width: 576px) {
   .card-deck .card {
     flex: 0 0 calc(50% - 30px);
+     background-color: rgb(216, 61, 61);
   }
 }
 
 @media (min-width: 768px) {
   .card-deck .card {
     flex: 0 0 calc(33.33333% - 30px);
+     background-color: rgb(216, 61, 61);
   }
 }
 
 @media (min-width: 992px) {
   .card-deck .card {
     flex: 0 0 calc(25% - 30px);
+     background-color: rgb(216, 61, 61);
   }
 }
 
