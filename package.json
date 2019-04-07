@@ -2,7 +2,7 @@
   "name": "emtutor",
   "description": "eLearning App for Nursing and Medicine",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "server.js",
   "private": true,
   "author": "Simo Mäkelä",
   "engines": {
