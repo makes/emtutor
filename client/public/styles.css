@@ -43,7 +43,7 @@
 canvas{
 
    border: 25px solid ;
-   border-image-source: url(EKGmonitorFrame.jpg);
+   border-image-source: url(EKGmonitorFrame.jpg)25 30 10 20 repeat stretch;
 border-image-outset: 10px;
     border-image-slice: 135;
     border-image-width: 75px; 
