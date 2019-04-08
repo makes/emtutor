@@ -45,7 +45,7 @@ canvas{
    border: 25px solid ;
    border-image-source: url(EKGmonitorFrame.jpg);
 
-    border-image-slice: 100%;
+    border-image-slice: auto;
     border-image-width: 75px; 
         
   padding-left: 30px;
