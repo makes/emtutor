@@ -18,7 +18,7 @@ const feedbackModal = {
     correctAnswer: Boolean,
     isVisible: () => feedbackModal.content !== '',
     setContent: (text) => { feedbackModal.content = text; },
-    view: vnode => m('.modal.fade[tabindex=-1][role=dialog]',
+    view: vnode => m('.modal.fade[tabindex=-1][role=dialog][data-backdrop=static][data-keyboard=false]',
         [
             m('.modal-dialog[role=document]', [
                 m('.modal-content', [
