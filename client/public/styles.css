@@ -51,7 +51,7 @@
   color:beige;
 }
 
-canvas{
+.canvas{
 
    border: 25px solid ;
    border-image-source: url(EKGmonitorFrame.jpg);
