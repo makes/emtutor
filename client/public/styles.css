@@ -56,5 +56,8 @@ border-image-outset: 10px;
 
   @media (max-width: 220px) {
       canvas {
-        border-image: none;
+        border-image-source: none;
+        border-image-outset: none;
+    border-image-slice: none;
+    border-image-width: none; 
       }
