@@ -34,13 +34,23 @@
 }
 
 
- @media  (max-width: 125px) {
-   .element{
-        border-image-source: none;
-     
+ @media  (min-width: 990px) {
+   canvas{
+
+    border: 25px solid ;
+    border-image-source: url(EKGmonitorFrame.jpg);
+ border-image-outset: 10px;
+     border-image-slice: 135;
+     border-image-width: 75px; 
+         
+   padding-left: 30px;
+   padding-top: 39px;
+   padding-right: 40px;
+   padding-bottom: 39px;
+
+      
       }
 }
-
 
 .card-title{
   color: azure;
@@ -49,18 +59,9 @@
   color:beige;
 }
 
-.canvas{
-
-   border: 25px solid ;
-   border-image-source: url(EKGmonitorFrame.jpg);
-border-image-outset: 10px;
-    border-image-slice: 135;
-    border-image-width: 75px; 
-        
-  padding-left: 30px;
-  padding-top: 39px;
-  padding-right: 40px;
-  padding-bottom: 39px;
-}
+@media (min-width:500px){
+.elemant{
+  border-image-source: none;
+} }
 
 
