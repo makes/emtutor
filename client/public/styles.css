@@ -53,3 +53,8 @@ border-image-outset: 10px;
   padding-right: 40px;
   padding-bottom: 39px;
 }
+
+  @media (max-width: 220px) {
+      .canvas {
+        border-image: none;
+      }
