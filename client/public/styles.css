@@ -37,9 +37,7 @@
  @media  (max-width: 125px) {
    .element{
         border-image-source: none;
-        border-image-outset: none;
-    border-image-slice: none;
-    border-image-width: none; 
+     
       }
 }
 
