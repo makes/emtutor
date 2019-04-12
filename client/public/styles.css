@@ -33,6 +33,17 @@
   }
 }
 
+
+ @media  (max-width: 125px) {
+   .element{
+        border-image-source: none;
+        border-image-outset: none;
+    border-image-slice: none;
+    border-image-width: none; 
+      }
+}
+
+
 .card-title{
   color: azure;
 }
@@ -54,11 +65,4 @@ border-image-outset: 10px;
   padding-bottom: 39px;
 }
 
- @media  (max-width: 125px) {
-   .canvas{
-        border-image-source: none;
-        border-image-outset: none;
-    border-image-slice: none;
-    border-image-width: none; 
-      }
-}
+
