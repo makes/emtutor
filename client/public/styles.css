@@ -54,9 +54,11 @@ border-image-outset: 10px;
   padding-bottom: 39px;
 }
 
- @media canvas (max-width: auto) {
+ @media  (max-width: 125px) {
+   .canvas{
         border-image-source: url( none);
         border-image-outset: none;
     border-image-slice: none;
     border-image-width: none; 
       }
+}
