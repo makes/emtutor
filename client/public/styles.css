@@ -54,8 +54,7 @@ border-image-outset: 10px;
   padding-bottom: 39px;
 }
 
- @media  (max-width: auto) {
-      .canvas {
+ canvas (max-width: auto) {
         border-image-source: none;
         border-image-outset: none;
     border-image-slice: none;
