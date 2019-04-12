@@ -54,8 +54,8 @@ border-image-outset: 10px;
   padding-bottom: 39px;
 }
 
- @media only screen and  (max-width: 120px) {
-      .element {
+ @media  (max-width: auto) {
+      .canvas {
         border-image-source: none;
         border-image-outset: none;
     border-image-slice: none;
