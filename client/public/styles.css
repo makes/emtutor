@@ -33,22 +33,28 @@
   }
 }
 
- @media  (min-width: 990px) {
-   canvas{
+@media  (min-width: 990px) {
+  canvas{
 
-    border: 25px solid ;
-    border-image-source: url(EKGmonitorFrame.jpg);
+   border: 25px solid ;
+   border-image-source: url(EKGmonitorFrame.jpg);
+
+    border-image-slice: 135;
+    border-image-width: 75px; 
+        
+  padding-left: 30px;
+  padding-top: 39px;
+  padding-right: 40px;
+  padding-bottom: 39px;
  
-     border-image-slice: 135;
-     border-image-width: 75px; 
-         
-   padding-left: 30px;
-   padding-top: 39px;
-   padding-right: 40px;
-   padding-bottom: 39px;
-  
-      }
+     }
 }
+
+@media  (min-width: 980px) {
+ .container-fluid .question{
+padding-left: none;
+padding-right: none;
+ }}
 
 .card-title{
   color: azure;
