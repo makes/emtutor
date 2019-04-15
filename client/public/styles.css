@@ -50,10 +50,10 @@
      }
 }
 
-@media  (min-width: 980px) {
+@media  (min-width: 970px) {
  .container-fluid .question{
-padding-left: none;
-padding-right: none;
+padding-left: 0;
+padding-right: 0;
  }}
 
 .card-title{
