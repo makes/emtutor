@@ -47,11 +47,13 @@ function view(vnode) {
         m('canvas', {
             id: 'chart', height: '250', oncreate: animateEcg, onupdate: resizeEcg,
         }),
-        m('h3', question.current.title),
-        question.current.choices.map(choice => m('button', {
-            class: 'btn btn-danger btn-lg btn-block',
-            onclick: () => feedbackModal.setContent(choice.feedback),
-        }, choice.title)),
+        m('div', { id: 'question' }, [
+            m('h3', question.current.title),
+            question.current.choices.map(choice => m('button', {
+                class: 'btn btn-danger btn-lg btn-block',
+                onclick: () => feedbackModal.setContent(choice.feedback),
+            }, choice.title)),
+        ]),
     ]),
     feedbackModal.isVisible()
         ? m(feedbackModal, {
