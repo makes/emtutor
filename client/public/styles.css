@@ -51,9 +51,10 @@
 }
 
 @media  (min-width: 980px) {
- .container-fluid .question{
+  .element.style{
 padding-left: none;
 padding-right: none;
+width: auto;
  }}
 
 .card-title{
