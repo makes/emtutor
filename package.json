@@ -17,6 +17,7 @@
     "express": "5.0.0-alpha.7",
     "mithril": "1.1.6",
     "mithril-node-render": "2.3.2",
+    "mongodb": "^3.2.3",
     "mongoose": "^5.4.20",
     "server": "^1.0.18",
     "smoothie": "^1.35.0"
