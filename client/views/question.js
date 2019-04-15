@@ -43,7 +43,7 @@ function view(vnode) {
     }
     const currentQuiz = vnode.attrs.quiz;
     const nextQuestion = parseInt(vnode.attrs.question, 10) + 1;
-    return [m('div', { id: 'ecg', class: 'container-fluid' }, [
+    return [m('div', { id: 'ecg' }, [
         m('canvas', {
             id: 'chart', height: '250', oncreate: animateEcg, onupdate: resizeEcg,
         }),

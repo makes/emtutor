@@ -51,9 +51,9 @@
 }
 
 @media  (min-width: 980px) {
-  .element.style{
-padding-left: none;
-padding-right: none;
+  #ecg{
+padding-left: 0;
+padding-right: 0;
 width: auto;
  }}
 
