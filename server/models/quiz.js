@@ -6,7 +6,7 @@ const quizSchema = new mongoose.Schema({
     questions: [{
         id: String,
         title: String,
-        choices: [{ title: String, feedback: String }],
+        choices: [{ title: String, feedback: String, isCorrect: Boolean }],
     }],
 }, { collection: 'quizzes' });
 

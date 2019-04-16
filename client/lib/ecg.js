@@ -6,7 +6,9 @@ const DOWNSAMPLE = 1; // 1 = no downsampling: output all data points.
 
 const ecg = {
     data: [],
-    graph: smoothie.TimeSeries,
+    graph: null, // smoothie.TimeSeries
+    chart: null, // smoothie.SmoothieChart
+    interval: null, // return value of setInterval()
     idx: Number,
     loadTextEcg: (filename) => {
         ecg.data = [];
@@ -96,22 +98,25 @@ const ecg = {
         xhr.send();
     },
     createTimeline: (canvas) => {
-        const chart = new smoothie.SmoothieChart({
+        ecg.chart = new smoothie.SmoothieChart({
             millisPerPixel: 10,
             /* scrollBackwards:true, */
+            tooltip: false,
             grid: { sharpLines: true },
             labels: { disabled: true },
         });
-        chart.addTimeSeries(ecg.graph, { strokeStyle: 'rgba(0, 255, 0, 1)', lineWidth: 1 });
-        chart.streamTo(canvas, 4); // Second argument is delay.
+        ecg.chart.addTimeSeries(ecg.graph, { strokeStyle: 'rgba(0, 255, 0, 1)', lineWidth: 1 });
+        ecg.chart.streamTo(canvas, 4); // Second argument is delay.
     },
 
     drawECG: (canvas, filename) => {
+        if (ecg.graph !== null) ecg.chart.removeTimeSeries(ecg.graph);
         ecg.graph = new smoothie.TimeSeries();
 
         ecg.loadMIT16ECG(filename, 2, 1);
 
-        setInterval(() => {
+        if (ecg.interval !== null) clearInterval(ecg.interval);
+        ecg.interval = setInterval(() => {
             ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
             // document.getElementById('idx').innerHTML = ecg.idx;
             ecg.idx += DOWNSAMPLE;
