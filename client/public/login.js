@@ -1,67 +1,69 @@
-$(document).ready(function(){
-   $("#regBtn").click(function(){
-       $.ajax({
-         type : 'GET',
-         url : '/register',
-         success: function(data){
-           $("#regDiv").html(data);
-         }
-       });
-   });
-   $("#loginBtn").click(function(){
-       $.ajax({
-         type : 'GET',
-         url : '/login',
-         success: function(data){
-           $("#loginDiv").html(data);
-         }
-       });
-   });
-   //=====Login Form Request=============================================
-   $("#loginForm").click(function(){
-     var uname  = $("#uname").val();
-     var upass = $("#upass").val();
-     var loginData ={'name': uname,'pass':upass};
-     $.ajax({
-         type : 'POST',
-         url : '/demo',
-         data : loginData,
-         success: function(data){
-         $("#mainDiv").html(data);
-         }
-       });
-   });
-//=====Register Form=============================================
-   $("#regForm").click(function(){
-     console.log('Register? or die');
-     var uname  = $("#uname").val();
-     var upass = $("#upass").val();
-     var regData ={'name': uname,'pass':upass};
-       $.ajax({
-         type : 'POST',
-         url : '/regiterToDb',
-         data : regData,
-         success: function(data){
-         $("#mainDiv").html(data);
-         }
-       });
-   });
-//Save profile Data================================================
-$('#saveBtn').click(function(){
-  var email = $("#email").val();
-  var phone = $("#phone").val();
-  var education = $("#education").val();
-  var aoi = $("#aoi").val();
-  var name = $("#name").val();
-  var pass = $("#pass").val();
-  var profileData = {'email':email,'phone':phone,'education' : education,'aoi':aoi,'name' : name,'pass' : pass};
-  $.ajax({
-    type : 'POST',
-    url : '/completeprofile',
-    data : profileData,
-    success : function(data){
-       $("#mainDiv").html(data);
-    }
-  });
-});
+$(document).ready(() => {
+    $('#regBtn').click(() => {
+        $.ajax({
+            type: 'GET',
+            url: '/register',
+            success: (data) => {
+                $('#regDiv').html(data);
+            },
+        });
+    });
+    $('#loginBtn').click(() => {
+        $.ajax({
+            type: 'GET',
+            url: '/login',
+            success: (data) => {
+                $('#loginDiv').html(data);
+            },
+        });
+    });
+    // =====Login Form Request=============================================
+    $('#loginForm').click(() => {
+        const uname = $('#uname').val();
+        const upass = $('#upass').val();
+        const loginData = { name: uname, pass: upass };
+        $.ajax({
+            type: 'POST',
+            url: '/demo',
+            data: loginData,
+            success: (data) => {
+                $('#mainDiv').html(data);
+            },
+        });
+    });
+    // =====Register Form=============================================
+    $('#regForm').click(() => {
+        console.log('Register? or die');
+        const uname = $('#uname').val();
+        const upass = $('#upass').val();
+        const regData = { name: uname, pass: upass };
+        $.ajax({
+            type: 'POST',
+            url: '/regiterToDb',
+            data: regData,
+            success: (data) => {
+                $('#mainDiv').html(data);
+            },
+        });
+    });
+    // Save profile Data================================================
+    $('#saveBtn').click(() => {
+        const email = $('#email').val();
+        const phone = $('#phone').val();
+        const education = $('#education').val();
+        const aoi = $('#aoi').val();
+        const name = $('#name').val();
+        const pass = $('#pass').val();
+        const profileData = {
+            email, phone, education, aoi, name, pass,
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/completeprofile',
+            data: profileData,
+            success: (data) => {
+                $('#mainDiv').html(data);
+            },
+        });
+    });
 });
