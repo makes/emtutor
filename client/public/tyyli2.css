@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Dosis', sans-serif;
-  background-color: rgb(31, 154, 154);
+  background-color: rgb(175, 238, 238);
 }
 
 .topnav {
@@ -81,7 +81,7 @@ strong {
 }  
 
 .flex-item {
-  background:rgb(168, 35, 128);
+  background:rgb(223, 122, 192);
   border-radius: 25px;
   padding: 5px;
   width: 300px;

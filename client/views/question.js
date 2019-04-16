@@ -9,7 +9,7 @@ function resizeEcg(vnode) {
 
 function animateEcg(vnode) {
     resizeEcg(vnode);
-    ecg.drawECG(vnode.dom, '/ecgdata/rec_1.dat');
+    ecg.drawECG(vnode.dom, '/ecgdata/rec_1.dat');    
     window.addEventListener('resize', () => { resizeEcg(vnode); }, false);
 }
 
@@ -49,10 +49,19 @@ function view(vnode) {
         }),
         m('div', { id: 'question' }, [
             m('h3', question.current.title),
+           /*m('button',{
+                 onclick:()=> ecg.stopECG(),
+               
+                class: 'btn btn-danger btn-lg btn-block',
+            }),*/
             question.current.choices.map(choice => m('button', {
                 class: 'btn btn-danger btn-lg btn-block',
-                onclick: () => feedbackModal.setContent(choice.feedback),
-            }, choice.title)),
+                onclick: () => {
+                    feedbackModal.setContent(choice.feedback);
+                
+
+                } 
+                    }, choice.title)),
         ]),
     ]),
     feedbackModal.isVisible()

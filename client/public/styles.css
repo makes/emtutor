@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
 @media (min-width: 0) {
   .card-deck .card {
     flex: 0 0 calc(100% - 30px);
@@ -34,28 +40,26 @@
 }
 
 @media  (min-width: 990px) {
-  canvas{
-
-   border: 25px solid ;
+  #chart{
+    
+   border: 85px solid ;
    border-image-source: url(EKGmonitorFrame.jpg);
 
-    border-image-slice: 135;
-    border-image-width: 75px; 
-        
-  padding-left: 30px;
-  padding-top: 39px;
-  padding-right: 40px;
-  padding-bottom: 39px;
+    border-image-slice: 125;
+    border-image-width: 84px; 
+    
  
      }
 }
+
 
 @media  (min-width: 980px) {
   #ecg{
 padding-left: 0;
 padding-right: 0;
 width: auto;
- }}
+
+ }} 
 
 .card-title{
   color: azure;
@@ -64,3 +68,9 @@ width: auto;
   color:beige;
 }
 
+#back{
+background-image: url('RemoteA.jpg');
+border-image-repeat: none;
+      height: 100%;
+      background-size: cover;
+}
