@@ -66,23 +66,18 @@ function view(vnode) {
 
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
-                    ecg.stopECG()
-                }
+                    ecg.stopECG();
+                },
             }),
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
-                    ecg.resetECG()
-                }
+                    ecg.resetECG();
+                },
             }),
-
-
-
-
 
             question.current.choices.map(choice => m('button', {
                 class: 'btn btn-danger btn-lg btn-block',
                 onclick: () => {
-
                     feedbackModal.setContent(choice.feedback);
                     if (choice.isCorrect) score += 1;
                 },
