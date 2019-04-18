@@ -133,7 +133,21 @@ const ecg = {
           clearInterval(ecg.interval) 
           ecg.chart.stop()
           
-      }
+      },
+
+      resetECG:()=>{
+        
+        ecg.interval = setInterval(() => {
+            ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
+            // document.getElementById('idx').innerHTML = ecg.idx;
+            ecg.idx += DOWNSAMPLE;
+            if (ecg.idx >= ecg.data.length) {
+                ecg.idx = 0;
+            }
+        }, 1); // Add a data point every 2ms 
+        ecg.chart.start()
+        
+    }
 };
 
 module.exports = ecg;
