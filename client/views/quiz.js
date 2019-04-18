@@ -69,6 +69,15 @@ function view(vnode) {
                     ecg.stopECG()
                 }
             }),
+            m('button.btn.btn-primary[type=button]', {
+                onclick: () => {
+                    ecg.resetECG()
+                }
+            }),
+
+
+
+
 
             question.current.choices.map(choice => m('button', {
                 class: 'btn btn-danger btn-lg btn-block',
