@@ -129,7 +129,10 @@ const ecg = {
       },
 
       stopECG:()=>{
-          ecg.chart.stop()  
+        
+          clearInterval(ecg.interval) 
+          ecg.chart.stop()
+          
       }
 };
 
