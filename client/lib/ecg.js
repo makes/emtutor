@@ -6,8 +6,9 @@ const DOWNSAMPLE = 1; // 1 = no downsampling: output all data points.
 
 const ecg = {
     data: [],
-    graph: smoothie.TimeSeries,
-    chart: smoothie.SmoothieChart,
+    graph: null, // smoothie.TimeSeries
+    chart: null, // smoothie.SmoothieChart
+    interval: null, // return value of setInterval()
     idx: Number,
     loadTextEcg: (filename) => {
         ecg.data = [];
@@ -100,6 +101,7 @@ const ecg = {
         ecg.chart = new smoothie.SmoothieChart({
             millisPerPixel: 10,
             /* scrollBackwards:true, */
+            tooltip: false,
             grid: { sharpLines: true },
             labels: { disabled: true },
         });
@@ -108,11 +110,13 @@ const ecg = {
     },
 
     drawECG: (canvas, filename) => {
+        if (ecg.graph !== null) ecg.chart.removeTimeSeries(ecg.graph);
         ecg.graph = new smoothie.TimeSeries();
 
         ecg.loadMIT16ECG(filename, 2, 1);
 
-        setInterval(() => {
+        if (ecg.interval !== null) clearInterval(ecg.interval);
+        ecg.interval = setInterval(() => {
             ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
             // document.getElementById('idx').innerHTML = ecg.idx;
             ecg.idx += DOWNSAMPLE;

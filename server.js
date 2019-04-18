@@ -31,9 +31,9 @@ app.use(compression());
 
 //  Connect all our routes to our application
 app.use('/api/questions', questions); // no real use for this
-app.use('/api/question', question);
 app.use('/api/quizzes', quizzes);
 app.use('/api/quiz', quiz);
+app.use('/api/quiz', question);
 
 app.get('/index.js', browserify('client/index.js'));
 app.use(express.static(`${__dirname}/client/public`)); // static files to be served

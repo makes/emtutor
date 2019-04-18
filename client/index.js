@@ -2,7 +2,7 @@ const domready = require('domready');
 const m = require('mithril');
 
 const quizList = require('./views/quizList.js');
-const question = require('./views/question.js');
+const quiz = require('./views/quiz.js');
 
 /* No hashbang in URL */
 m.route.prefix('');
@@ -14,6 +14,6 @@ m.route.prefix('');
 domready(() => {
     m.route(document.body, '/list', {
         '/list': quizList,
-        '/question/:quiz/:question': question,
+        '/quiz/:key': quiz,
     });
 });
