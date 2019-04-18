@@ -7,6 +7,7 @@ const DOWNSAMPLE = 1; // 1 = no downsampling: output all data points.
 const ecg = {
     data: [],
     graph: smoothie.TimeSeries,
+    chart: smoothie.SmoothieChart,
     idx: Number,
     loadTextEcg: (filename) => {
         ecg.data = [];
@@ -96,14 +97,14 @@ const ecg = {
         xhr.send();
     },
     createTimeline: (canvas) => {
-        const chart = new smoothie.SmoothieChart({
+        ecg.chart = new smoothie.SmoothieChart({
             millisPerPixel: 10,
             /* scrollBackwards:true, */
             grid: { sharpLines: true },
             labels: { disabled: true },
         });
-        chart.addTimeSeries(ecg.graph, { strokeStyle: 'rgba(0, 255, 0, 1)', lineWidth: 1 });
-        chart.streamTo(canvas, 4); // Second argument is delay.
+        ecg.chart.addTimeSeries(ecg.graph, { strokeStyle: 'rgba(0, 255, 0, 1)', lineWidth: 1 });
+        ecg.chart.streamTo(canvas, 4); // Second argument is delay.
     },
 
     drawECG: (canvas, filename) => {
@@ -120,7 +121,12 @@ const ecg = {
             }
         }, 1); // Add a data point every 2ms
         ecg.createTimeline(canvas);
-    },
+
+      },
+
+      stopECG:()=>{
+          ecg.chart.stop()  
+      }
 };
 
 module.exports = ecg;
