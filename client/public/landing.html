@@ -8,7 +8,7 @@
         </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src = "login.js" type="text/javascript"></script>
+        <script type="text/javascript" src="login.js"></script>
         <script>
             $(document).ready(function(){
                 $("#backtohome").click(function(){
@@ -19,35 +19,41 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
-            html{
+            html, body, main{
                 height: 100%;
+                display: grid;
             }
             body {
-                background: url("http://emtutor.azurewebsites.net/landing_background.png") no-repeat center fixed;
-                background-size: cover;
+                margin: 0;
             }
-            .card {
-                background: inherit;
+            main {
+                background: url("http://emtutor.azurewebsites.net/landing_background.png") fixed no-repeat center;
+                background-size: cover;
+                margin: 0;
+            }
+            .frosted-glass {
                 width: 350px;
-                position: absolute;
-                top: 50%;
+                background: inherit;
+                position: relative;
+                margin: auto;
+                /*top: 50%;
                 left: 50%;
                 margin-right: -50%;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);*/
                 z-index: 1;
                 overflow: hidden;
                 padding: 1rem;
                 border-radius: 25px;
+                box-shadow: 0 .5em 1em rgba(0,0,0,.3);
             }
-            .card::before {
+            .frosted-glass::before {
                 content: "";
                 position: absolute;
                 z-index: -1;
                 top: 0; right: 0; bottom: 0; left: 0;
                 background: inherit;
-                box-shadow: inset 0 0 3000px rgba(104, 104, 104, 0.5);
-                filter: blur(20px);
-                -webkit-filter: blur(20px);
+                box-shadow: inset 0 0 3000px rgba(255, 255, 255, 0.5);
+                filter: blur(8px);
                 margin: -20px;
             }
             li {
@@ -55,13 +61,12 @@
             }
         </style>
     </head>
-    <body>
-        <section>
-            <div class="card" id="descriptionCard">
+    <main>
+            <div class="frosted-glass">
                 <ul class="list-group list-group-flush">
                     <li>
                         <div>
-                            <img class="card-img-top" src="http://emtutor.azurewebsites.net/emtutor-logo.svg" width="300" height="125" style="padding: 5px;">
+                            <img src="http://emtutor.azurewebsites.net/emtutor-logo.svg" width="300" height="125" style="padding: 5px;">
                         </div>
                     </li>
                     <li>
@@ -79,7 +84,6 @@
                     </li>
                 </ul>
             </div>
-        </section>
         <section>
             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -200,5 +204,5 @@
                 </div>
             </div>
         </section>
-    </body>
+    </main>
 </html>
