@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
             Welcome to Emtutor!
         </title>
@@ -18,15 +19,39 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
-            body {
-                background: url()
+            html{
+                height: 100%;
             }
-            #descriptionCard {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 300px;
-                margin: auto;
+            body {
+                background: url("http://emtutor.azurewebsites.net/landing_background.png") no-repeat center fixed;
+                background-size: cover;
+            }
+            .card {
+                background: inherit;
+                width: 350px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                overflow: hidden;
+                padding: 1rem;
+                border-radius: 25px;
+            }
+            .card::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0; right: 0; bottom: 0; left: 0;
+                background: inherit;
+                box-shadow: inset 0 0 3000px rgba(104, 104, 104, 0.5);
+                filter: blur(20px);
+                -webkit-filter: blur(20px);
+                margin: -20px;
+            }
+            li {
+                list-style: none;
             }
         </style>
     </head>
@@ -34,12 +59,12 @@
         <section>
             <div class="card" id="descriptionCard">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+                    <li>
                         <div>
                             <img class="card-img-top" src="http://emtutor.azurewebsites.net/emtutor-logo.svg" width="300" height="125" style="padding: 5px;">
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li>
                         <div class="card-body" id="description">
                             <p class="text-center">description description description description description description description description description description description </p>
                         </div>
