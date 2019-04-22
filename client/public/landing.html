@@ -17,10 +17,22 @@
         </script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            body {
+                background: url()
+            }
+            #descriptionCard {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 300px;
+                margin: auto;
+            }
+        </style>
     </head>
     <body>
         <section>
-            <div class="card" id="logo" style="width: 300px">
+            <div class="card" id="descriptionCard">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div>
@@ -41,118 +53,122 @@
                         </button>
                     </li>
                 </ul>
-                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2 class="w3-text-red" id="exampleModalLabel">Login</h2>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div>
-                                        <p>
-                                            <label class="w3-text-red"><b>User Name</b></label>
-                                            <input class="w3-input w3-border" name="uname" type="text" id ="uname">
-                                        </p>
-                                        <p>
-                                            <label class="w3-text-red" id = "pass"><b>Password</b></label>
-                                            <input class="w3-input w3-border" name="pass" type="text" id ="upass">
-                                        </p>
-                                        <p>
-                                            <button class="btn w3-red" id="loginForm">Login</button>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            </div>
+        </section>
+        <section>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="w3-text-red" id="exampleModalLabel">Registration</h2>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                                <h2 class="w3-text-red" id="exampleModalLabel">Login</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <div>
                                     <p>
                                         <label class="w3-text-red"><b>User Name</b></label>
-                                        <input class="w3-input w3-border" id="uname"  name="uname" type="text">
+                                        <input class="w3-input w3-border" name="uname" type="text" id ="uname">
                                     </p>
                                     <p>
-                                        <label class="w3-text-red"><b>Password</b></label>
-                                        <input class="w3-input w3-border" id="upass" name="pass" type="text">
+                                        <label class="w3-text-red" id = "pass"><b>Password</b></label>
+                                        <input class="w3-input w3-border" name="pass" type="text" id ="upass">
                                     </p>
                                     <p>
-                                        <button class="btn w3-red" id="regForm" data-dismiss="modal" data-toggle="modal" data-target="#profileModal">Register</button>
+                                        <button class="btn w3-red" id="loginForm">Login</button>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="w3-text-red" id="exampleModalLabel">Hello <%= loginData.name %> ! Complete your profile</h2>
+            </div>
+            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w3-text-red" id="exampleModalLabel">Registration</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" name="name" value=<%= loginData.name %> id ="name">
-                                <input type="hidden" name="pass" value=<%= loginData.pass %> id = "pass">
+                        </div>
+                        <div class="modal-body">
+                            <div>
                                 <p>
-                                    <label class="w3-text-red"><b>Email</b>
-                                    </label>
-                                    <input class="w3-input w3-border" name="email" type="text" id ="email">
-                                </p>
-                                    <p>
-                                    <label class="w3-text-red" id = "pass"><b>Mobile Number</b></label>
-                                    <input class="w3-input w3-border" name="phone" type="text" id ="phone">
+                                    <label class="w3-text-red"><b>User Name</b></label>
+                                    <input class="w3-input w3-border" id="uname"  name="uname" type="text">
                                 </p>
                                 <p>
-                                    <label class="w3-text-red" id = "pass"><b>Education</b>
-                                    </label>
-                                    <input class="w3-input w3-border" name="education" type="text" id ="education">
+                                    <label class="w3-text-red"><b>Password</b></label>
+                                    <input class="w3-input w3-border" id="upass" name="pass" type="text">
                                 </p>
                                 <p>
-                                    <label class="w3-text-red" id = "pass"><b>Area of Intrest</b>
-                                    </label>
-                                    <input class="w3-input w3-border" name="aoi" type="text" id ="aoi">
-                                </p>
-                                <p>
-                                    <button class="btn w3-red" id="saveBtn" data-dismiss="modal" data-toggle="modal" data-target="#completeModal">Save</button>
+                                    <button class="btn w3-red" id="regForm" data-dismiss="modal" data-toggle="modal" data-target="#profileModal">Register</button>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="w3-text-red" id="exampleModalLabel">Welcome : <%= profileData.name %>, Your profile is completed!</h2>
+            </div>
+            <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w3-text-red" id="exampleModalLabel">Hello <%= loginData.name %> ! Complete your profile</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="w3-text-red">
-                                    Here are your details:
-                                </p>>
-                                <div>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="name" value=<%= loginData.name %> id ="name">
+                            <input type="hidden" name="pass" value=<%= loginData.pass %> id = "pass">
+                            <p>
+                                <label class="w3-text-red"><b>Email</b>
+                                </label>
+                                <input class="w3-input w3-border" name="email" type="text" id ="email">
+                            </p>
+                                <p>
+                                <label class="w3-text-red" id = "pass"><b>Mobile Number</b></label>
+                                <input class="w3-input w3-border" name="phone" type="text" id ="phone">
+                            </p>
+                            <p>
+                                <label class="w3-text-red" id = "pass"><b>Education</b>
+                                </label>
+                                <input class="w3-input w3-border" name="education" type="text" id ="education">
+                            </p>
+                            <p>
+                                <label class="w3-text-red" id = "pass"><b>Area of Intrest</b>
+                                </label>
+                                <input class="w3-input w3-border" name="aoi" type="text" id ="aoi">
+                            </p>
+                            <p>
+                                <button class="btn w3-red" id="saveBtn" data-dismiss="modal" data-toggle="modal" data-target="#completeModal">Save</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w3-text-red" id="exampleModalLabel">Welcome : <%= profileData.name %>, Your profile is completed!</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="w3-text-red">
+                                Here are your details:
+                            </p>>
+                            <div>
                                     <p>Email:     <%= profileData.email %> </p>
                                     <p>Phone:    <%= profileData.phone %> </p>
                                     <p>Education:    <%= profileData.education %> </p>
                                     <p>AOI:          <%= profileData.aoi %> </p>
                                 <div>
-                                <button class="btn w3-red" id="backtohome" data-dismiss="modal" aria-label="Close">Back</button></p>
+                                    <button class="btn w3-red" id="backtohome" data-dismiss="modal" aria-label="Close">Back</button></p>
+                                </div>
                             </div>
                         </div>
                     </div>
