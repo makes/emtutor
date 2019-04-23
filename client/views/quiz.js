@@ -69,23 +69,23 @@ function view(vnode) {
 
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
+<<<<<<< HEAD
                     ecg.stopECG()
                                }
+=======
+                    ecg.stopECG();
+                },
+>>>>>>> e7e3f1052f3d92c9d58f1aeea5f037db7970dd67
             }),
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
-                    ecg.resetECG()
-                }
+                    ecg.resetECG();
+                },
             }),
-
-
-
-
 
             question.current.choices.map(choice => m('button', {
                 class: 'btn btn-danger btn-lg btn-block',
                 onclick: () => {
-
                     feedbackModal.setContent(choice.feedback);
                     if (choice.isCorrect) score += 1;
                 },

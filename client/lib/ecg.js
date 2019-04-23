@@ -125,18 +125,14 @@ const ecg = {
             }
         }, 1); // Add a data point every 2ms
         ecg.createTimeline(canvas);
+    },
 
-      },
+    stopECG: () => {
+        clearInterval(ecg.interval);
+        ecg.chart.stop();
+    },
 
-      stopECG:()=>{
-        
-          clearInterval(ecg.interval) 
-          ecg.chart.stop()
-          
-      },
-
-      resetECG:()=>{
-        
+    resetECG: () => {
         ecg.interval = setInterval(() => {
             ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
             // document.getElementById('idx').innerHTML = ecg.idx;
@@ -144,10 +140,10 @@ const ecg = {
             if (ecg.idx >= ecg.data.length) {
                 ecg.idx = 0;
             }
-        }, 1); // Add a data point every 2ms 
-        ecg.chart.start()
-        
-    }
+        }, 1); // Add a data point every 2 ms
+
+        ecg.chart.start();
+    },
 };
 
 module.exports = ecg;
