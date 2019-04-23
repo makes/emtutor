@@ -65,17 +65,12 @@ function view(vnode) {
             m('h3', `${question.current.title} (${question.index + 1}/${quiz.num_questions})`),
 
 
-            
+
 
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
-<<<<<<< HEAD
                     ecg.stopECG()
                                }
-=======
-                    ecg.stopECG();
-                },
->>>>>>> e7e3f1052f3d92c9d58f1aeea5f037db7970dd67
             }),
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
