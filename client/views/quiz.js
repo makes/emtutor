@@ -64,9 +64,6 @@ function view(vnode) {
         m('div', { id: 'question' }, [
             m('h3', `${question.current.title} (${question.index + 1}/${quiz.num_questions})`),
 
-
-
-
             m('button.btn.btn-primary[type=button]', {
                 onclick: () => {
                     ecg.stopECG()

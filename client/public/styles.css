@@ -42,23 +42,11 @@ html, body {
 @media  (min-width: 990px) {
   #chart{
     
-   border: 85px solid ;
-   border-image-source: url(EKGmonitorFrame.jpg);
-
-    border-image-slice: 125;
-    border-image-width: 85px;
-
-     }
-}
 
 
-@media  (min-width: 980px) {
-  #ecg{
-padding-left: 0;
-padding-right: 0;
-width: auto;
 
- }} 
+
+
 
 .card-title{
   color: azure;
