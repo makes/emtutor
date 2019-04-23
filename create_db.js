@@ -29,7 +29,16 @@ questions = [];
 questions.push({ title: 'Test question 2', choices: [ {title: 'Test answer 4', feedback: 'Test feedback 4', isCorrect: true}, {title: 'Test answer 5', feedback: 'Test feedback 5', isCorrect: false}] });
 questions.push({ title: 'Test question 3', choices: [ {title: 'Test answer 6', feedback: 'Test feedback 6', isCorrect: false}, {title: 'Test answer 7', feedback: 'Test feedback 7', isCorrect: true}] });
 
-quizzes.push(new Quiz({ title: 'TEST quiz 2!', description: 'this is another test quiz.', questions}));
+quizzes.push(new Quiz({ title: 'TEST quiz 2!!!', description: 'this is another test quiz.', questions}));
+
+questions = [];
+questions.push({ title: 'Milloin lääkkeen saa puolittaa ', choices: [ {title: 'Kun siinä on jakoviiva', feedback: 'oikein', isCorrect: true}, {title: 'Aina', feedback: 'väärin', isCorrect: false}] });
+questions.push({ title: 'Potilaalle on määrätty lääkettä 360 mg vuorokaudessa. Lääke annetaan aamulla ja illalla. Yhdessä lääkkeessä on 120 mg. Kuinka monta tablettia annat kerralla?', choices: [ {title: '1', feedback: 'Väärin oikea vastaus 1,5', isCorrect: false}, {title: '1,5', feedback: 'oikein', isCorrect: true}] });
+
+quizzes.push(new Quiz({ title: 'pharmaceutical quiz', description: 'this is another test quiz.', questions}));
+
+
+
 
 async function buildDatabase() {
     await mongoose.connect(dbURI, { dbName: 'emtutor', useNewUrlParser: true });
