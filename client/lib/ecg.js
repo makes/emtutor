@@ -10,6 +10,7 @@ const ecg = {
     chart: null, // smoothie.SmoothieChart
     interval: null, // return value of setInterval()
     idx: Number,
+    isRunning: true,
     loadTextEcg: (filename) => {
         ecg.data = [];
         ecg.idx = 0;
@@ -109,40 +110,59 @@ const ecg = {
         ecg.chart.streamTo(canvas, 4); // Second argument is delay.
     },
 
+
+addDatapoint: () =>{
+    ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
+    // document.getElementById('idx').innerHTML = ecg.idx;
+    ecg.idx += DOWNSAMPLE;
+    if (ecg.idx >= ecg.data.length) {
+        ecg.idx = 0;
+    }
+},
+
+
     drawECG: (canvas, filename) => {
         if (ecg.graph !== null) ecg.chart.removeTimeSeries(ecg.graph);
         ecg.graph = new smoothie.TimeSeries();
 
         ecg.loadMIT16ECG(filename, 2, 1);
 
+         
         if (ecg.interval !== null) clearInterval(ecg.interval);
-        ecg.interval = setInterval(() => {
-            ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
-            // document.getElementById('idx').innerHTML = ecg.idx;
-            ecg.idx += DOWNSAMPLE;
-            if (ecg.idx >= ecg.data.length) {
-                ecg.idx = 0;
-            }
-        }, 1); // Add a data point every 2ms
+        ecg.interval = setInterval((ecg.addDatapoint) , 1); // Add a data point every 2ms
         ecg.createTimeline(canvas);
     },
+
+
+
+
+ loadECG:()=>{
+    ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
+    // document.getElementById('idx').innerHTML = ecg.idx;
+    ecg.idx += DOWNSAMPLE;
+    if (ecg.idx >= ecg.data.length) {
+        ecg.idx = 0;
+    }
+ },
+
+
+
+pauseECG: () => {
+    if (ecg.isRunning) ecg.stopECG()
+    else ecg.startECG()
+},
 
     stopECG: () => {
         clearInterval(ecg.interval);
         ecg.chart.stop();
+        ecg.isRunning=false;
     },
 
-    resetECG: () => {
-        ecg.interval = setInterval(() => {
-            ecg.graph.append(new Date().getTime(), ecg.data[ecg.idx]);
-            // document.getElementById('idx').innerHTML = ecg.idx;
-            ecg.idx += DOWNSAMPLE;
-            if (ecg.idx >= ecg.data.length) {
-                ecg.idx = 0;
-            }
-        }, 1); // Add a data point every 2 ms
+    startECG: () => {
+        ecg.interval = setInterval(ecg.addDatapoint, 1); // Add a data point every 2 ms
 
         ecg.chart.start();
+        ecg.isRunning=true;
     },
 };
 

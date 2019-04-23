@@ -39,12 +39,23 @@ html, body {
   }
 }
 
-@media  (min-width: 990px) {
-  #chart{
-    
+@media  (min-width: 980px) {
+  #ecg{
+    border: 25px solid ;
+    border-image-source: url(EKGmonitorFrame.jpg) ;
+     border-image-slice: 135;      
+     border-width: 60px;
+     width:  auto;
+     height: 365px;
 
 
+ }
+} 
 
+ canvas{
+   width: 600px;
+   height: 600px;
+ }
 
 
 
