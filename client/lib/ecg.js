@@ -145,8 +145,6 @@ addDatapoint: () =>{
     }
  },
 
-
-
 pauseECG: () => {
     if (ecg.isRunning) ecg.stopECG()
     else ecg.startECG()

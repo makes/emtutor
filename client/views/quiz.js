@@ -71,7 +71,7 @@ function view(vnode) {
                 onclick: () => {
                     ecg.pauseECG()
                                }
-            }),
+            }, "Play/Pause"),
          
           
             question.current.choices.map(choice => m('button', {
