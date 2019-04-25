@@ -66,7 +66,8 @@ function view(vnode) {
 
            
            
-            m('button.btn.btn-primary[type=button]', {
+            m('button', {
+                class: 'btn btn-danger btn-lg btn-block',
                 onclick: () => {
                     ecg.pauseECG()
                                }
