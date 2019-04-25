@@ -41,15 +41,22 @@ html, body {
 
 @media  (min-width: 980px) {
   #ecg{
-    border: 25px solid ;
+      border: 25px solid;
     border-image-source: url(EKGmonitorFrame.jpg) ;
-     border-image-slice: 135;      
-     border-width: 100%;
-    
+      padding: 104px;
+   border-image-slice: 135;
+     border-image-width: 130px; 
+
  }
 } 
 
- 
+@media(min-width: 980px){
+  canvas{
+    width: 100%;
+    height: 100%;
+  }
+
+ }
 
 
 
