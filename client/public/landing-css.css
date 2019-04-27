@@ -10,7 +10,7 @@ main {
     background-size: cover;
     margin: 0;
 }
-.frosted-glass {
+.glass {
     width: 350px;
     background: inherit;
     position: relative;
@@ -25,7 +25,7 @@ main {
     border-radius: 25px;
     box-shadow: 0 .5em 1em rgba(0,0,0,.3);
 }
-.frosted-glass::before {
+.glass::before {
     content: "";
     position: absolute;
     z-index: -1;
