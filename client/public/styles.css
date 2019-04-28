@@ -50,13 +50,6 @@ html, body {
  }
 } 
 
-@media(min-width: 980px){
-  canvas{
-    width: 100%;
-    height: 100%;
-  }
-
- }
 
 
 
