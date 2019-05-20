@@ -11,7 +11,6 @@ function view() {
         ])))));
 }
 
-
 module.exports = {
     oninit: quiz.loadList,
     view,

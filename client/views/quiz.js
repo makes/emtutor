@@ -59,21 +59,18 @@ function view(vnode) {
     return [
         m('div', { id: 'ecg' },
             m('canvas', {
-                id: 'chart', oncreate: animateEcg,  height: '250',/* onupdate: resizeEcg, */
+                id: 'chart', oncreate: animateEcg, height: '250', /* onupdate: resizeEcg, */
             })),
         m('div', { id: 'question' }, [
             m('h3', `${question.current.title} (${question.index + 1}/${quiz.num_questions})`),
-
-           
-           
             m('button', {
                 class: 'btn btn-info btn-lg btn-block',
                 onclick: () => {
-                    ecg.pauseECG()
-                               }
-            }, "Play/Pause"),
-         
-          
+                    ecg.pauseECG();
+                },
+            }, 'Play/Pause'),
+
+
             question.current.choices.map(choice => m('button', {
                 class: 'btn btn-danger btn-lg btn-block',
                 onclick: () => {
