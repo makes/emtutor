@@ -36,7 +36,7 @@ function view(vnode) {
                         id: 'skipBtn',
                         href: '/list',
                         style: 'margin-top: 5px;',
-                    }, 'Continue without registering')]))),
+                    }, 'Continue without registration')]))),
         m(loginModal),
         m(registerModal),
         m(profileModal),
